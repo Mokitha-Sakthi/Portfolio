@@ -1,0 +1,577 @@
+/* Global box-sizing for consistent layout */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Base styles */
+body {
+  margin: 0;
+  background-color: #F3F3EE; /* Softer background */
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  color: #1F1C38; /* Text color unified */
+}
+
+/* Header styles */
+header {
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #1F1C38;
+  color: #ffffff;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+header nav {
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  margin: 0;
+  width: 100%;
+}
+
+nav a {
+  margin: 0 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #3E8E9E;
+}
+
+/* Section styles (only background) */
+section {
+  padding: 0; /* same as before */
+  background-color: #f0f4f3; /* cohesive background */
+}
+
+/* General headings */
+h1 {
+  text-align: center;
+  color: #1F1C38; /* unified heading color */
+}
+
+/* Content containers */
+.container {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.box {
+  background: #ffffff;
+  border: 2px solid #1F1C38;
+  padding: 1rem;
+  width: 50%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.box h3 {
+  margin-top: 0;
+  color: #1F1C38;
+}
+
+.me {
+  background: #ffffff;
+  border: 2px solid #1F1C38;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  padding: 0.4rem;
+  border-radius: 8px;
+}
+
+/* === DO NOT CHANGE ANYTHING IN THE HOME SECTION BELOW === */
+/* Home section styling */
+#home {
+  position: relative;
+  height: 100vh;
+  background-color: #F3F3EE;
+  background: url('/public/images/bg.png');
+  background-size:cover;
+   /* keep same */
+}
+
+.home_container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+/* Heading overlay styling */
+.heading {
+  font-family: "Italianno", cursive;
+  position: absolute;
+  top: 5rem;
+  left: 15rem;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 3;
+  color: #1F1C38;
+  padding-top: 0;
+}
+
+.heading h1 {
+  font-family: "Rye", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #1F1C38;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+.heading h1:nth-child(2) {
+  font-size: 2.5rem;
+  color: #1F1C38;
+  letter-spacing: 6px;
+  font-weight: 300;
+}
+
+#about {
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #F3F3EE;
+  padding: 3rem 1rem;
+}
+
+#about-experience {
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  background: url('/public/images/Screenshot 2025-07-14 192611.png') no-repeat center center;
+  background-size: cover;
+  padding: 5rem 1rem;
+  overflow: hidden;
+}
+
+/* Glass styling for inner sections */
+#about-experience .glass {
+  background: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  color: #000000; /* black text */
+}
+
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: auto;
+  padding-left: 20px;
+}
+
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: #1F1C38;
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: 13px;
+  background: #1F1C38;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  width: 16px;
+  height: 16px;
+  top: 5px;
+  z-index: 1;
+}
+
+.timeline-content {
+  background: #ffffff;
+  padding: 1rem;
+  border: 1px solid #1F1C38;
+  border-radius: 6px;
+  margin-left: 50px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.timeline-content h3 {
+  margin-top: 0;
+  color: #1F1C38;
+}
+
+.education{
+  margin:2rem;
+}
+
+/* Navbar active link */
+.active-link {
+  color: #3E8E9E;
+  font-weight: bold;
+  border-bottom: 2px solid #3E8E9E;
+}
+
+/* Modal styles */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 90%;
+  position: relative;
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px; right: 10px;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Skills Bar */
+.skill-bar {
+  margin-bottom: 1rem;
+}
+.skill-bar span {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+.progress {
+  background: #ddd;
+  border-radius: 10px;
+  height: 15px;
+  width: 100%;
+}
+.progress-level {
+  background: #3E8E9E;
+  height: 100%;
+  border-radius: 10px 0 0 10px;
+}
+
+/* Scroll to top */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #3E8E9E;
+  border: none;
+  padding: 0.7rem 1rem;
+  color: white;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Project Card */
+.project-card {
+  background: white;
+  border: 2px solid #1F1C38;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: box-shadow 0.3s ease;
+}
+.project-card:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+
+/* Dark mode */
+body.dark-mode {
+  background-color: #121212;
+  color: #eee;
+}
+body.dark-mode header,
+body.dark-mode nav a {
+  background-color: #222;
+  color: #eee;
+}
+body.dark-mode .project-card {
+  background: #222;
+  border-color: #555;
+  box-shadow: none;
+}
+
+nav a,
+nav .active-link {
+  margin-left: 1rem;
+}
+
+/* === About Section Styling === */
+#about h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1F1C38;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#about h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1F1C38;
+  margin-top: 2rem;
+}
+
+#about p {
+  text-align: center;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+
+#about .me {
+  background: #ffffff;
+  border: 2px solid #1F1C38;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+#about .fun-facts-list {
+  list-style: none;
+  padding: 0;
+  max-width: 600px;
+  margin: 2rem auto 0 auto;
+}
+
+#about .fun-facts-list li {
+  margin-bottom: 1rem;
+}
+
+#about .fun-facts-list button {
+  background-color: #f0f4f3;
+  border: 2px solid #1F1C38;
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  text-align: left;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#about .fun-facts-list button:hover {
+  background-color: #e0ecf0;
+}
+
+#about .fun-fact-text {
+  background: #ffffff;
+  border: 1px solid #1F1C38;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-top: 0.3rem;
+}
+
+/* === Academics Section Styling === */
+#education {
+  font-family: "Aladin", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  position: relative;
+  background: url('/public/images/Screenshot\ 2025-07-14\ 192611.png') no-repeat center center;
+  background-size: cover;
+  padding: 5rem 1rem;
+  overflow: hidden;
+  background-color: #F3F3EE;
+  padding: 3rem 1rem;
+}
+
+#education h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #1F1C38;
+  margin-bottom: 1rem;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+#education h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #1F1C38;
+  margin-top: 2rem;
+}
+
+#education p {
+  text-align: center;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0.5rem auto;
+}
+
+#education .projects,
+#education .cert {
+  background: #ffffff;
+  border: 2px solid #1F1C38;
+  border-radius: 8px;
+  padding: 2rem;
+  margin: 2rem auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  max-width: 900px;
+}
+
+/* === Responsive Overrides for #home layout === */
+@media (max-width: 1024px) {
+  .heading {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+  }
+  .wave {
+    object-fit: cover;
+    object-position: center top;
+    height: 100%;
+  }
+  .ship {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 200px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    top: 20%;
+  }
+  .heading h1 {
+    font-size: 2.2rem;
+  }
+  .heading h1:nth-child(2) {
+    font-size: 1.6rem;
+    letter-spacing: 4px;
+  }
+  .ship {
+    width: 150px;
+    bottom: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heading {
+    top: 15%;
+  }
+  .heading h1 {
+    font-size: 1.8rem;
+  }
+  .heading h1:nth-child(2) {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+  }
+  .ship {
+    width: 120px;
+    bottom: 20px;
+  }
+}
+
+/* === Fully override .heading and .ship positioning responsively === */
+
+/* Desktop and tablet landscape */
+@media (max-width: 1200px) {
+  .heading {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    top: 5rem;
+  }
+  .ship {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 250px;
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 992px) {
+  .heading {
+    top: 4rem;
+  }
+  .ship {
+    width: 200px;
+  }
+}
+
+/* Small tablets and large phones */
+@media (max-width: 768px) {
+  .heading {
+    top: 20%;
+  }
+  .heading h1 {
+    font-size: 2rem;
+  }
+  .heading h1:nth-child(2) {
+    font-size: 1.5rem;
+    letter-spacing: 4px;
+  }
+  .ship {
+    width: 150px;
+  }
+}
+
+/* Phones */
+@media (max-width: 576px) {
+  .heading {
+    top: 18%;
+  }
+  .heading h1 {
+    font-size: 1.8rem;
+  }
+  .heading h1:nth-child(2) {
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+  }
+  .ship {
+    width: 120px;
+  }
+}
+
+/* Extra small phones */
+@media (max-width: 420px) {
+  .heading {
+    top: 15%;
+  }
+  .heading h1 {
+    font-size: 1.5rem;
+  }
+  .heading h1:nth-child(2) {
+    font-size: 1.1rem;
+  }
+  .ship {
+    width: 100px;
+  }
+}
